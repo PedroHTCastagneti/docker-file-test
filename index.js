@@ -6,10 +6,11 @@ server.get("/usuario", (req, res) => {
   if(res.statusCode=200){
    console.log("certo");
   }
-   return res.json({ usuario: "Pedro" });
+   return res.json({get: "Foi" });
 });
-server.delete("/delete", (req, res) => {
-  return res.json({ usuario: "Pedro" });
+
+server.put("/put", (req, res) => {
+  return res.json({ put: "Certo" });
 });
 
 server.post("/post", (req, res) => {
@@ -17,8 +18,13 @@ server.post("/post", (req, res) => {
 });
 
 server.patch("/patch", (req, res) =>{
-  return res.write("Talvez funcione");
+  return res.json({Patch: "funcionou"});
 })
+
+server.delete("/delete", (req, res) => {
+  return res.json({delet: "deu" });
+});
+
 server.listen(3000, () => {
   console.log("Servidor esta funcionando");
 });
